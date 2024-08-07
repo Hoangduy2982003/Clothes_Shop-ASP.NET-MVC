@@ -11,12 +11,12 @@ namespace BanHangOnline.Models
             this.Items = new List<ShoppingCartItem>();
         }
 
-        public void AddToCart(ShoppingCartItem item, int Quantity)
+        public void AddToCart(ShoppingCartItem item, int quantity)
         {
             var checkExists = Items.FirstOrDefault(x => x.ProductId == item.ProductId);
             if (checkExists != null)
             {
-                checkExists.Quantity += Quantity;
+                checkExists.Quantity += quantity;
                 checkExists.TotalPrice += checkExists.Quantity * checkExists.Price;
             }
             else
@@ -44,7 +44,7 @@ namespace BanHangOnline.Models
             }
         }
 
-        public decimal GetTotal()
+        public decimal GetTotalPrice()
         {
             return Items.Sum(x => x.TotalPrice);
         }
@@ -64,6 +64,8 @@ namespace BanHangOnline.Models
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }
+        public string ProductImg { get; set; }
+        public string Alias { get; set; }
         public string CategoryName { get; set; }
         public string ProductImage { get; set; }
         public int Quantity { get; set; }

@@ -9,12 +9,34 @@ namespace BanHangOnline.Areas.Admin.Controllers
         // GET: Admin/ShoppingCart
         public ActionResult Index()
         {
+
+            return View();
+        }
+
+        public ActionResult CheckOut()
+        {
+
+            return View();
+        }
+
+        public ActionResult Partial_Item_ThanhToan()
+        {
             ShoppingCart cart = (ShoppingCart)Session["Cart"];
             if (cart != null)
             {
-                return View(cart.Items);
+                return PartialView(cart.Items);
             }
-            return View();
+            return PartialView();
+        }
+
+        public ActionResult Partial_Item_Cart()
+        {
+            ShoppingCart cart = (ShoppingCart)Session["Cart"];
+            if (cart != null)
+            {
+                return PartialView(cart.Items);
+            }
+            return PartialView();
         }
 
         public ActionResult ShowCount()
@@ -66,6 +88,18 @@ namespace BanHangOnline.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        public ActionResult Update(int id, int quantity)
+        {
+            ShoppingCart cart = (ShoppingCart)Session["Cart"];
+            if (cart != null)
+            {
+                cart.UpdateQuantity(id, quantity);
+                return Json(new { Success = true });
+            }
+            return Json(new { Success = false });
+        }
+
+        [HttpPost]
         public ActionResult Delete(int id)
         {
             var code = new { Success = false, msg = "", code = -1, Count = 0 };
@@ -80,6 +114,18 @@ namespace BanHangOnline.Areas.Admin.Controllers
                 }
             }
             return Json(code);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteAll()
+        {
+            ShoppingCart cart = (ShoppingCart)Session["Cart"];
+            if (cart != null)
+            {
+                cart.ClearCart();
+                return Json(new { Success = true });
+            }
+            return Json(new { Success = false });
         }
     }
 }

@@ -249,6 +249,7 @@
     <Compile Include="Models\CommonAbstract.cs" />
     <Compile Include="Common\Common.cs" />
     <Compile Include="Models\Common\Filter.cs" />
+    <Compile Include="Models\CustomerViewModel.cs" />
     <Compile Include="Models\EF\Adv.cs" />
     <Compile Include="Models\EF\Category.cs" />
     <Compile Include="Models\EF\Contact.cs" />

@@ -15,7 +15,11 @@ namespace BanHangOnline.Areas.Admin.Controllers
 
         public ActionResult CheckOut()
         {
-
+            ShoppingCart cart = (ShoppingCart)Session["Cart"];
+            if (cart != null)
+            {
+                ViewBag.CheckCart = cart;
+            }
             return View();
         }
 

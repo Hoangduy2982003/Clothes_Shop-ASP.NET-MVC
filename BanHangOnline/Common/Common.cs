@@ -24,7 +24,6 @@ namespace BanHangOnline.Common
                     smtp.Port = 587; //port number
                     smtp.EnableSsl = true; //whether your smtp server requires SSL
                     smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
-
                     smtp.UseDefaultCredentials = false;
                     smtp.Credentials = new NetworkCredential()
                     {

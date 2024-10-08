@@ -40,6 +40,7 @@ namespace BanHangOnline.Models
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Subscribe> Subscribes { get; set; }
+        public DbSet<ThongKe> ThongKes { get; set; }
 
         public static ApplicationDbContext Create()
         {

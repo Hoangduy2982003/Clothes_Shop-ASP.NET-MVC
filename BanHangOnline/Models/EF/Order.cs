@@ -27,6 +27,6 @@ namespace BanHangOnline.Models.EF
         public int Quantity { get; set; }
         public int TypePayment { get; set; }
 
-        public ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

@@ -85,6 +85,7 @@ namespace BanHangOnline.Areas.Admin.Controllers
                     order.CustomerName = orderViewModel.CustomerName;
                     order.Phone = orderViewModel.Phone;
                     order.Address = orderViewModel.Address;
+                    order.Email = orderViewModel.Email;
                     cart.Items.ForEach(x => order.OrderDetails.Add(new OrderDetail
                     {
                         ProductId = x.ProductId,

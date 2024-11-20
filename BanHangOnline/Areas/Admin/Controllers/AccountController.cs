@@ -111,7 +111,7 @@ namespace BanHangOnline.Areas.Admin.Controllers
         [AllowAnonymous]
         public ActionResult Create()
         {
-            ViewBag.Role = new SelectList(db.Roles.ToList(), "Id", "Name");
+            ViewBag.Role = new SelectList(db.Roles.ToList(), "Name", "Name");
             return View();
         }
 

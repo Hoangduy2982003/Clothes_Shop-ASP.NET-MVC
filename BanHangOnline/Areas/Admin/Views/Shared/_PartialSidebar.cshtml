@@ -150,7 +150,7 @@
                         @*<span class="right badge badge-danger">New</span>*@
                     </p>
                 </a>
-            </li>
+            </li> 
         </ul>
     </nav>
     <!-- /.sidebar-menu -->
@@ -159,8 +159,8 @@
 
 @if (Request.IsAuthenticated)
 {
-    <div>
-        @using (Html.BeginForm("", "Account", FormMethod.Post, new {@id = "logOffForm"}))
+    <div style="display: none">
+        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new {@id = "logOffForm"}))
         {
             @Html.AntiForgeryToken()
         }

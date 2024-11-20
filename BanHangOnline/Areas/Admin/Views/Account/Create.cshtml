@@ -29,7 +29,7 @@
 
         </div>
         <div class="card-body">
-            @using (Html.BeginForm("Create", "Role", FormMethod.Post))
+            @using (Html.BeginForm("Create", "Account", FormMethod.Post))
             {
                 @Html.ValidationSummary(false)
                 @Html.AntiForgeryToken()

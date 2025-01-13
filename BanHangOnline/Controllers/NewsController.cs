@@ -16,7 +16,7 @@ namespace BanHangOnline.Controllers
         public ActionResult Partial_News_Home()
         {
             var items = db.News.Take(3).ToList();
-            return PartialView();
+            return PartialView(items);
         }
     }
 }
